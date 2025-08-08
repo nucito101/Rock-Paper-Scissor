@@ -1,6 +1,5 @@
 import Choice from "./Enum/Choice"
 import "./style.css"
-const { BASE_URL } = import.meta.env
 
 let totalMatches: number = 0
 let currentMatch: number = 0
@@ -25,6 +24,7 @@ const restartBtn = document.getElementById("restart_game") as HTMLButtonElement
 const notice = document.getElementById("notice") as HTMLDivElement
 
 const choices = Object.values(Choice)
+console.log(`${import.meta.env.BASE_URL}Hand Rock.svg`)
 
 function getComputerChoice(): Choice {
   const index = Math.floor(Math.random() * choices.length)
@@ -35,8 +35,8 @@ function playRound(userChoice: Choice): void {
   if (currentMatch > totalMatches) return
   const pcChoice = getComputerChoice()
 
-  userHandImg.src = `${BASE_URL}Hand ${capitalize(userChoice)}.svg`
-  pcHandImg.src = `${BASE_URL}Hand ${capitalize(pcChoice)}.svg`
+  userHandImg.src = `${import.meta.env.BASE_URL}Hand ${capitalize(userChoice)}.svg`
+  pcHandImg.src = `${import.meta.env.BASE_URL}Hand ${capitalize(pcChoice)}.svg`
 
   let result = ""
 
@@ -102,8 +102,8 @@ function resetGame() {
   gameBox.classList.remove("active")
   gameBox.classList.add("game_hidden")
   configBox.classList.remove("hidden")
-  userHandImg.src = `${BASE_URL}Hand Rock.svg`
-  pcHandImg.src = `${BASE_URL}Hand Rock.svg`
+  userHandImg.src = `${import.meta.env.BASE_URL}Hand Rock.svg`
+  pcHandImg.src = `${import.meta.env.BASE_URL}Hand Rock.svg`
 }
 
 startBtn.addEventListener("click", () => {
@@ -142,8 +142,8 @@ userButtons.forEach((btn) => {
     })
 
     userButtons.forEach((btn) => (btn.disabled = true))
-    userHandImg.src = `${BASE_URL}Hand Rock.svg`
-    pcHandImg.src = `${BASE_URL}Hand Rock.svg`
+    userHandImg.src = `${import.meta.env.BASE_URL}Hand Rock.svg`
+    pcHandImg.src = `${import.meta.env.BASE_URL}Hand Rock.svg`
 
     triggerAnimation(userHandImg, "shake")
     triggerAnimation(pcHandImg, "shake")
