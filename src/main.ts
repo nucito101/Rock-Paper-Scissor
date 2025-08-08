@@ -1,5 +1,6 @@
 import Choice from "./Enum/Choice"
 import "./style.css"
+const { BASE_URL } = import.meta.env
 
 let totalMatches: number = 0
 let currentMatch: number = 0
@@ -34,8 +35,8 @@ function playRound(userChoice: Choice): void {
   if (currentMatch > totalMatches) return
   const pcChoice = getComputerChoice()
 
-  userHandImg.src = `/Hand ${capitalize(userChoice)}.svg`
-  pcHandImg.src = `/Hand ${capitalize(pcChoice)}.svg`
+  userHandImg.src = `${BASE_URL}Hand ${capitalize(userChoice)}.svg`
+  pcHandImg.src = `${BASE_URL}Hand ${capitalize(pcChoice)}.svg`
 
   let result = ""
 
@@ -101,8 +102,8 @@ function resetGame() {
   gameBox.classList.remove("active")
   gameBox.classList.add("game_hidden")
   configBox.classList.remove("hidden")
-  userHandImg.src = "/Hand Rock.svg"
-  pcHandImg.src = "/Hand Rock.svg"
+  userHandImg.src = `${BASE_URL}Hand Rock.svg`
+  pcHandImg.src = `${BASE_URL}Hand Rock.svg`
 }
 
 startBtn.addEventListener("click", () => {
@@ -141,8 +142,8 @@ userButtons.forEach((btn) => {
     })
 
     userButtons.forEach((btn) => (btn.disabled = true))
-    userHandImg.src = "/Hand Rock.svg"
-    pcHandImg.src = "/Hand Rock.svg"
+    userHandImg.src = `${BASE_URL}Hand Rock.svg`
+    pcHandImg.src = `${BASE_URL}Hand Rock.svg`
 
     triggerAnimation(userHandImg, "shake")
     triggerAnimation(pcHandImg, "shake")
