@@ -34,8 +34,8 @@ A simple, interactive **Rock, Paper, Scissors** game against the computer – bu
 
 ## Screenshots
 
-![Start Screen](./public/Readme/Game_view.png)
-![Game Screen](./public/Readme/Game_view.png)
-![End Screen](./public/Readme/Result_view.png)
+![Start Screen](./public/Start_screen.png)
+![Game Screen](./public/Game_view.png)
+![End Screen](./public/Result_view.png)
 
 This is a [SuperCode](https://www.super-code.de/) Project. This page was created as part of the SuperCode Bootcamp “AI WebApp Solution Engineer” in Module 2.
