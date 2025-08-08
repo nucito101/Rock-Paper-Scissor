@@ -3,7 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Project-TS Rock, Paper, Scissors</title>
   </head>
-  <body></body>
+  <body>
+    <div class="config">
+      <label for="match_count">Rounds:</label>
+      <p>(Choose a number between 1 and 20)</p>
+      <input id="match_count" type="number" min="1" max="20" />
+      <button id="start_game">Start Game</button>
+    </div>
+
+    <div class="game game_hidden">
+      <div class="match_specs">
+        <div class="match_count_game">Match 1 / input number</div>
+        <div class="match_result">Match result</div>
+      </div>
+
+      <div class="hands">
+        <div class="pc_hand">
+          <div class="pc_score">
+            <span class="score_title"> PC score </span>
+            <span class="score_number"> 0 </span>
+          </div>
+          <img src="/Hand Rock.svg" />
+        </div>
+        <div class="user_hand">
+          <div class="player_score">
+            <span class="score_title"> Your score </span>
+            <span class="score_number"> 0 </span>
+          </div>
+          <img src="/Hand Rock.svg" />
+        </div>
+      </div>
+
+      <div class="user_selection">
+        <button id="Rock">
+          <img src="/Hand Rock.svg" alt="rock" />
+        </button>
+        <button id="Paper">
+          <img src="/Hand Paper.svg" alt="paper" />
+        </button>
+        <button id="Scissors">
+          <img src="/Hand Scissors.svg" alt="scissors" />
+        </button>
+      </div>
+
+      <div class="overlay overlay_hidden">
+        <h1 class="final_result"></h1>
+        <button id="restart_game" class="overlay_hidden">Restart game</button>
+      </div>
+      <div id="notice" class="notice_hidden">Congratulations you can play infinitely</div>
+    </div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
 </html>
